@@ -1,10 +1,16 @@
 const App = {
   data() {
     return {
-      counter: 50,
-      title: 'Super counter'
+      title: 'Notes list',
+      placeholderStr: 'Insert note text',
+      inputValue: '',
     };
   },
+  methods: {
+    inputChangeHandler(evt) {
+      this.inputValue = evt.target.value;
+    }
+  }
 
 };
 
