@@ -13,20 +13,26 @@
         <div class="form-control">
           <input 
             type="text"
-            v-bind:placeholder="placeholderStr"
-            v-bind:value="inputValue"
-            v-on:input="inputChangeHandler"
-            v-on:keypress.enter="addNote"
+            :placeholder="placeholderStr"
+            :value="inputValue"
+            @input="inputChangeHandler"
+            @keypress.enter="addNote"
           />
         </div>
         <button class="btn" v-on:click="addNote">Добавить</button>
         <hr>
-        <ul class="list">
+        <ul class="list" v-if="notesList.length">
           <li class="list-item" v-for="(iNote, i) in notesList">
-            {{ iNote }}
+            {{ iNote.toUpperCase() }}
             <button class="btn danger" v-on:click="handleRemove(i, $event)">del</button>
           </li>
+          <hr>
+          <li>Total count: {{notesList.length }}</li>
+          <li>Double count: {{ doubleCountComputed }}</li>
         </ul>
+        <div v-else>
+          Заметок пока нет. Добавьте первую
+        </div>
       </div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>

@@ -24,6 +24,12 @@ const App = {
     handleRemove(i, evt) {
       this.notesList.splice(i, 1);
     }
+  },
+  computed: {
+    doubleCountComputed() {
+      console.log('dcComp');
+      return this.notesList.length * 2;
+    }
   }
 
 };
