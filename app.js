@@ -15,8 +15,14 @@ const App = {
       this.inputValue = evt.target.value;
     },
     addNote() {
+      if (this.inputValue === '') {
+        return ;
+      }
       this.notesList.push(this.inputValue);
       this.inputValue = '';
+    },
+    handleRemove(i) {
+      this.notesList.splice(i, 1);
     }
   }
 
