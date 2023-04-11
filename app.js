@@ -21,7 +21,7 @@ const App = {
       this.notesList.push(this.inputValue);
       this.inputValue = '';
     },
-    handleRemove(i) {
+    handleRemove(i, evt) {
       this.notesList.splice(i, 1);
     }
   }
