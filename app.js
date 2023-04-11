@@ -11,9 +11,6 @@ const App = {
     };
   },
   methods: {
-    inputChangeHandler(evt) {
-      this.inputValue = evt.target.value;
-    },
     addNote() {
       if (this.inputValue === '') {
         return ;
@@ -27,8 +24,12 @@ const App = {
   },
   computed: {
     doubleCountComputed() {
-      console.log('dcComp');
       return this.notesList.length * 2;
+    }
+  },
+  watch: {
+    inputValue(value) {
+      console.log(value)
     }
   }
 

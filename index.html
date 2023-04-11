@@ -9,13 +9,14 @@
   <body>
     <div class="container" id="app">
       <div class="card">
-        <h1>{{ title }}</h1>
+        <h1 :style="{ 
+          color: inputValue.length > 3 ? 'green' : 'red' 
+        }">{{ title }}</h1>
         <div class="form-control">
           <input 
             type="text"
             :placeholder="placeholderStr"
-            :value="inputValue"
-            @input="inputChangeHandler"
+            v-model="inputValue"
             @keypress.enter="addNote"
           />
         </div>
