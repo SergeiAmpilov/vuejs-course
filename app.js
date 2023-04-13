@@ -10,9 +10,15 @@ const App = {
     items: [1, 2, 3, 4, 5, 6],
   }),
   methods: {
-    // handleClick(i) {
-    //   this.items.splice(i,1);
-    // }
+    addItem(evt) {
+        this.items.unshift(this.$refs.myInput.value);
+        this.$refs.myInput.value = '';
+    }
+  },
+  computed: {
+    evenItems() {
+      return this.items.filter( el => el % 2 === 0)
+    }
   }
 };
 

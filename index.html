@@ -17,6 +17,11 @@
   <div class="container pt-5" id="app" v-cloak>
     <div class="card center">
       <div v-html="myHtml"></div>
+      <div class="form-control">
+        <input type="text"
+          @keyup.enter="addItem"
+          ref="myInput">
+      </div>
       <ul class="list" v-if="items.length">
         <li 
           class="list-item"
