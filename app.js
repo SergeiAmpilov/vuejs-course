@@ -10,7 +10,9 @@ const App = {
     items: [1, 2, 3, 4, 5, 6],
   }),
   methods: {
-    // hanfff
+    // handleClick(i) {
+    //   this.items.splice(i,1);
+    // }
   }
 };
 
