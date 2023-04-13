@@ -1,42 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue Basics</title>
-    <link rel="stylesheet" href="theme.css" />
-  </head>
-  <body>
-    <div class="container" id="app">
-      <div class="card">
-        <h1 :style="{ 
-          color: inputValue.length > 3 ? 'green' : 'red' 
-        }">{{ title }}</h1>
-        <div class="form-control">
-          <input 
-            type="text"
-            :placeholder="placeholderStr"
-            v-model="inputValue"
-            @keypress.enter="addNote"
-          />
-        </div>
-        <button class="btn" v-on:click="addNote">Добавить</button>
-        <hr>
-        <ul class="list" v-if="notesList.length">
-          <li class="list-item" v-for="(iNote, i) in notesList">
-            {{ iNote.toUpperCase() }}
-            <button class="btn danger" v-on:click="handleRemove(i, $event)">del</button>
-          </li>
-          <hr>
-          <li>Total count: {{notesList.length }}</li>
-          <li>Double count: {{ doubleCountComputed }}</li>
-        </ul>
-        <div v-else>
-          Заметок пока нет. Добавьте первую
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue lesson 3</title>
+  <link rel="stylesheet" href="theme.css" />
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container pt-5" id="app" v-cloak>
+    <div class="card center">
+      <div v-html="myHtml"></div>
+      <h2 v-text="title"></h2>
+      <h2 v-once>{{ title }}</h2>
+      <h2 v-pre>{{title}}</h2>
+      <button class="btn" @click="title += 'h'">click me</button>
     </div>
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="app.js"></script>
-  </body>
+  </div>
+  
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
 </html>

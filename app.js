@@ -1,40 +1,9 @@
 const App = {
-  data() {
-    return {
-      title: 'Notes list',
-      placeholderStr: 'Insert note text',
-      inputValue: '',
-      notesList: [
-        'note 1',
-        'note 2'
-      ],
-    };
-  },
-  methods: {
-    addNote() {
-      if (this.inputValue === '') {
-        return ;
-      }
-      this.notesList.push(this.inputValue);
-      this.inputValue = '';
-    },
-    handleRemove(i, evt) {
-      this.notesList.splice(i, 1);
-    }
-  },
-  computed: {
-    doubleCountComputed() {
-      return this.notesList.length * 2;
-    }
-  },
-  watch: {
-    inputValue(value) {
-      console.log(value)
-    }
-  }
-
+  data: () => ({
+    title: 'I am Grut',
+    myHtml: '<h1>Vue 3 App</h1>'
+  }),
 };
-
 
 
 const vApp = Vue.createApp(App);
