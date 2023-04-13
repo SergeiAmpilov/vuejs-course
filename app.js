@@ -13,6 +13,9 @@ const App = {
     addItem(evt) {
         this.items.unshift(this.$refs.myInput.value);
         this.$refs.myInput.value = '';
+    },
+    log(item) {
+      console.log(item);
     }
   },
   computed: {
