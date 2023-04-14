@@ -25,6 +25,5 @@ const App = {
   }
 };
 
-
 const vApp = Vue.createApp(App);
 vApp.mount('#app');
