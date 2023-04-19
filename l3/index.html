@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue lesson 3</title>
+  <link rel="stylesheet" href="theme.css" />
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container pt-5" id="app" v-cloak>
+    <div class="card center">
+      <div v-html="myHtml"></div>
+      <div class="form-control">
+        <input type="text"
+          @keyup.enter="addItem"
+          ref="myInput">
+      </div>
+      <ul class="list" v-if="items.length">
+        <li 
+          class="list-item"
+          v-for="(item, idx) in items"
+          @click="items.splice(idx,1), log(item)"
+          :key="item"
+          >
+          <strong>
+            {{item}}
+          </strong>. demo content &nbsp;
+          <input type="text" @click.stop>
+        </li>
+      </ul>
+      <h3 v-show="items.length === 0">No items. Yet</h3>
+    </div>
+  </div>
+  
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+</html>
