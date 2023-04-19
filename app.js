@@ -7,7 +7,7 @@ const App = {
   },
   methods: {
     changeTitle() {
-      console.log(this);
+      // console.log(this);
       this.title += 'h';
     }
   },
@@ -37,3 +37,12 @@ const App = {
 
 const vApp = Vue.createApp(App);
 vApp.mount('#app');
+
+
+Vue.createApp({
+  data() {
+    return {
+      title: 'new title 2'
+    }
+  }
+}).mount('#app2')
