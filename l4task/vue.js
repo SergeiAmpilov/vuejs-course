@@ -18,15 +18,23 @@ const App = {
   methods: {
     prev() {
       // когда нажимаем кнопку назад
+      this.activeIndex--;
+
     },
     reset() {
       // начать заного
     },
     nextOfFinish() {
+      this.activeIndex++;
       // кнопка вперед или закончить
     },
     setActive(idx) {
       // когда нажимаем на определенный шаг
+    },
+    getClassNameByIndex(idx) {
+      return 'steps-item ' + 
+              `${idx === this.activeIndex ? 'active' : ''}` + ' ' +
+              `${idx < this.activeIndex ? 'done' : ''}`
     }
   },
   computed: {
